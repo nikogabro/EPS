@@ -1,15 +1,16 @@
 {
-  "site_url": "https://example.ge",
-  "name": "[კომპანიის სახელი]",
-  "phone": "[+995 XXX XX XX XX]",
-  "email": "[info@example.ge]",
-  "street": "[ქუჩა, ნომერი]",
-  "city": "[ქალაქი]",
-  "hours": "[ორშაბათი – შაბათი, 09:00 – 18:00]",
-  "facebook": "",
+  "site_url": "https://epskarkhana.ge",
+  "name": "EPS ქარხანა",
+  "phone": "+995 599 22 97 33",
+  "phone2": "+995 595 63 88 28",
+  "email": "info@epskarkhana.ge",
+  "street": "ახალგაზრდობის გამზირი N19",
+  "city": "ქუთაისი, 4600",
+  "hours": "ორშაბათი – შაბათი, 09:00 – 18:00",
+  "facebook": "https://www.facebook.com/profile.php?id=61597015010589",
   "instagram": "",
-  "whatsapp": "",
-  "map_embed_src": "",
-  "lat": "",
-  "lng": ""
+  "whatsapp": "https://wa.me/995599229733",
+  "map_embed_src": "https://www.google.com/maps?q=Akhalgazrdobis+Avenue+19,+Kutaisi,+Georgia+4600&output=embed",
+  "lat": "42.2679",
+  "lng": "42.6946"
 }

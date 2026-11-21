@@ -10,4 +10,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://example.ge/sitemap.xml
+Sitemap: https://epskarkhana.ge/sitemap.xml
