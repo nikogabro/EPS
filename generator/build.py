@@ -116,7 +116,7 @@ def sizesum(p):
 def card(p,i=None):
     c=CAT[p['cat']]
     idx=f'<span class="card-index">{i:02d}</span>' if i is not None else ''
-    return f'<a class="card {c["kind"]} reveal" href="{p["url"]}">{idx}<span class="ph">{img(p["imgurl"],p["wh"],p["name"]+" – EPS დეკორატიული ელემენტი")}</span><span class="cap"><b>{E(p["name"])}</b><span>{E(sizesum(p))}</span></span></a>'
+    return f'<a class="card {c["kind"]} reveal" href="{p["url"]}">{idx}<span class="ph">{img(p["imgurl"],p["wh"],p["name"]+" – "+c["title"])}</span><span class="cap"><b>{E(p["name"])}</b><span>{E(sizesum(p))}</span></span></a>'
 CTA=lambda: f'<div class="cta-row"><a class="btn dark" href="/contact/" data-i18n="cta.price">ფასის მოთხოვნა</a>'+(f'<a class="btn line" href="{phone_href()}">{E(cfg["phone"])}</a>' if phones() else '')+'</div>'
 
 # ---------- home
@@ -153,27 +153,27 @@ body=f'''<section class="hero" aria-label="მთავარი">
   <div class="hero-copy">
     <div class="hero-kicker"><span class="hero-rule" aria-hidden="true"></span><p class="eyebrow" data-i18n="home.kicker">საქართველო · EPS წარმოება</p></div>
     <h1 data-i18n="home.h1">EPS დეკორატიული ელემენტები ფასადისთვის</h1>
-    <p class="hero-lead" data-i18n="home.lead">კარნიზები, სვეტები, პანელები და თაღები EPS-ისგან. წარმოება საქართველოშია, მიწოდება მთელ ქვეყანაში.</p>
+    <p class="hero-lead" data-i18n="home.lead">კარნიზები, სვეტები, პანელები, ჩარჩოები და კრონშტეინები EPS-ისგან. წარმოება საქართველოშია, მიწოდება მთელ ქვეყანაში.</p>
     <div class="cta-row"><a class="btn" href="/contact/" data-i18n="cta.request">მოითხოვეთ ფასი</a><a class="btn alt" href="/products/" data-i18n="cta.catalog">კატალოგის ნახვა</a></div>
   </div>
   <aside class="hero-rail" aria-label="მოკლე მიმოხილვა">
-    <div class="hero-meta"><div><b>12</b><span data-i18n="home.meta.cats">კატეგორია</span></div><div><b>{len(P)}</b><span data-i18n="home.meta.products">პროდუქტი</span></div><div><b>EPS</b><span data-i18n="home.meta.material">მასალა</span></div></div>
+    <div class="hero-meta"><div><b>{len(CAT)}</b><span data-i18n="home.meta.cats">კატეგორია</span></div><div><b>{len(P)}</b><span data-i18n="home.meta.products">პროდუქტი</span></div><div><b>EPS</b><span data-i18n="home.meta.material">მასალა</span></div></div>
   </aside>
 </div>
 </section>
 <section class="sec-stone" id="categories"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow" data-i18n="home.cat.eyebrow">კატალოგი</p><h2 data-i18n="home.cat.h2">პროდუქციის კატეგორიები</h2></div><p class="lead" data-i18n="home.cat.lead">აირჩიეთ კატეგორია, შემდეგ პროდუქტი – მის გვერდზე ნახავთ ხელმისაწვდომ ზომებს.</p></div><div class="cat-grid">{cats_html}</div></div></section>
 <section id="gallery"><div class="wrap-wide"><div class="section-head stack reveal"><p class="eyebrow" data-i18n="home.gal.eyebrow">პორტფოლიო</p><h2 data-i18n="home.gal.h2">ფასადის მაგალითები</h2></div><div class="gal">{gal}</div></div></section>
-<section class="sec-dark" id="why"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow" data-i18n="home.why.eyebrow">უპირატესობები</p><h2 data-i18n="home.why.h2">რატომ EPS</h2></div></div><div class="facts"><div class="fact reveal"><span class="fact-num">01</span><h3 data-i18n="home.why.1.t">მსუბუქია</h3><p data-i18n="home.why.1.p">ელემენტები ფასადს დიდ დატვირთვას არ უმატებს და მათი აწევა და დამაგრება მარტივია.</p></div><div class="fact reveal reveal-d1"><span class="fact-num">02</span><h3 data-i18n="home.why.2.t">სწრაფი მონტაჟი</h3><p data-i18n="home.why.2.p">დამაგრება ხდება წებოვანი ხსნარით, საჭიროებისამებრ დუბელებით.</p></div><div class="fact reveal reveal-d2"><span class="fact-num">03</span><h3 data-i18n="home.why.3.t">ბევრი ფორმა</h3><p data-i18n="home.why.3.p">პროფილები, სვეტები, კუთხის ქვები, თაღები და ორნამენტული ელემენტები.</p></div><div class="fact reveal reveal-d3"><span class="fact-num">04</span><h3 data-i18n="home.why.4.t">ადგილობრივი წარმოება</h3><p data-i18n="home.why.4.p">ზომებისა და ვადების დაზუსტება შეგიძლიათ პირდაპირ მწარმოებელთან.</p></div></div></div></section>
+<section class="sec-dark" id="why"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow" data-i18n="home.why.eyebrow">უპირატესობები</p><h2 data-i18n="home.why.h2">რატომ EPS</h2></div></div><div class="facts"><div class="fact reveal"><span class="fact-num">01</span><h3 data-i18n="home.why.1.t">მსუბუქია</h3><p data-i18n="home.why.1.p">ელემენტები ფასადს დიდ დატვირთვას არ უმატებს და მათი აწევა და დამაგრება მარტივია.</p></div><div class="fact reveal reveal-d1"><span class="fact-num">02</span><h3 data-i18n="home.why.2.t">სწრაფი მონტაჟი</h3><p data-i18n="home.why.2.p">დამაგრება ხდება წებოვანი ხსნარით, საჭიროებისამებრ დუბელებით.</p></div><div class="fact reveal reveal-d2"><span class="fact-num">03</span><h3 data-i18n="home.why.3.t">ბევრი ფორმა</h3><p data-i18n="home.why.3.p">პროფილები, სვეტები, კუთხის ქვები, კრონშტეინები და ორნამენტული ელემენტები.</p></div><div class="fact reveal reveal-d3"><span class="fact-num">04</span><h3 data-i18n="home.why.4.t">ადგილობრივი წარმოება</h3><p data-i18n="home.why.4.p">ზომებისა და ვადების დაზუსტება შეგიძლიათ პირდაპირ მწარმოებელთან.</p></div></div></div></section>
 <section class="sec-stone" id="order"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow" data-i18n="home.order.eyebrow">შეკვეთა</p><h2 data-i18n="home.order.h2">როგორ შევუკვეთოთ</h2></div></div><ol class="steps reveal"><li data-i18n="home.order.1">გამოგვიგზავნეთ ფასადის ფოტო, ნახაზი ან სასურველი მოდელების სია.</li><li data-i18n="home.order.2">დავაზუსტებთ ზომებს, რაოდენობასა და ვადას.</li><li data-i18n="home.order.3">გაგიგზავნით ფასს.</li><li data-i18n="home.order.4">დადასტურების შემდეგ ვამზადებთ და გიგზავნით შეკვეთას.</li></ol>{CTA()}</div></section>
 <section id="blog"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow" data-i18n="home.blog.eyebrow">პუბლიკაციები</p><h2 data-i18n="home.blog.h2">ბლოგი</h2></div><p class="lead"><a href="/blog/" data-i18n="home.blog.all">ყველა სტატია →</a></p></div><ul class="blog-grid">{posts}</ul></div></section>
 <section class="sec-stone" id="faq"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow" data-i18n="home.faq.eyebrow">კითხვები</p><h2 data-i18n="home.faq.h2">ხშირად დასმული კითხვები</h2></div></div><div class="faq-list">{fq}</div></div></section>
 <section id="contact-cta"><div class="wrap"><div class="contact-band reveal"><div><p class="eyebrow" data-i18n="home.cta.eyebrow">კონტაქტი</p><h2 data-i18n="home.cta.h2">ფასის მოთხოვნა</h2><p class="lead" data-i18n="home.cta.lead">გამოგვიგზავნეთ ფასადის ფოტო, ნახაზი ან მოდელების სია და დაგიზუსტებთ ფასს, ზომებსა და ვადას.</p></div><div>{CTA()}</div></div></div></section>'''
-page('/',f'EPS ფასადის დეკორი: კარნიზები, სვეტები, პანელები | {NAME}','ფასადის დეკორატიული ელემენტები პოლისტირონისგან (EPS): კარნიზები, სვეტები, კუთხის ქვები, ფასადის პანელები, თაღები. წარმოება საქართველოში.',body,
+page('/',f'EPS ფასადის დეკორი: კარნიზები, სვეტები, პანელები | {NAME}','ფასადის დეკორატიული ელემენტები პოლისტირონისგან (EPS): კარნიზები, სვეტები, კუთხის ქვები, ფასადის პანელები, კრონშტეინები. წარმოება საქართველოში.',body,
  [{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a_}} for q,a_ in FAQ]}],home=True)
 
 # ---------- products index
 body=crumbs_html([('მთავარი','/'),('პროდუქცია','/products/')])+f'<section><div class="wrap"><div class="page-hero reveal"><p class="eyebrow" data-i18n="products.eyebrow">კატალოგი</p><h1 data-i18n="products.h1">EPS ფასადის დეკორის კატალოგი</h1><p class="lead" data-i18n="products.lead">12 კატეგორია: კარნიზებიდან სვეტებამდე და ფასადის პანელებამდე. თითოეული პროდუქტის გვერდზე ნახავთ ზომებს.</p></div><div class="cat-grid">{cats_html}</div></div></section>'
-page('/products/','EPS ფასადის დეკორის კატალოგი – კარნიზები, სვეტები, პანელები | '+NAME,'EPS ფასადის დეკორის სრული კატალოგი: კარნიზები, ფანჯრის საპირეები, სვეტები, კუთხის ქვები, ფასადის პანელები, თაღები და სხვა.',body,
+page('/products/','EPS ფასადის დეკორის კატალოგი – კარნიზები, სვეტები, პანელები | '+NAME,'EPS ფასადის დეკორის სრული კატალოგი: კარნიზები, ფანჯრის ჩარჩოები, სვეტები, კუთხის ქვები, ფასადის პანელები, კრონშტეინები და სხვა.',body,
  [crumbs_ld([('მთავარი','/'),('პროდუქცია','/products/')])])
 
 # ---------- category pages
@@ -193,21 +193,21 @@ for p in P:
     multi=len(sz)>1
     if multi: szs=f'ხელმისაწვდომია {len(sz)} ზომაში: '+'; '.join(s for _,s in sz)+'.'
     else: szs=f'ზომა: {sz[0][1]}.'
-    d1=f'{p["name"]} არის EPS (გაფართოებული პოლისტირონის) დეკორატიული ელემენტი ფასადისთვის. {cd["use"]}'
+    d1=f'{p["name"]}. {cd["use"]}'
     if p['note']: d1+=' '+p['note']
-    d2='ელემენტი ფასადზე მაგრდება სპეციალური წებოვანი ხსნარით, საჭიროებისამებრ დუბელებით. დამაგრების შემდეგ ზედაპირი იფარება დამცავი ფენით და იღებება. ფასისა და ხელმისაწვდომობის დასაზუსტებლად დაგვიკავშირდით.'
+    d2='ფასისა და ხელმისაწვდომობის დასაზუსტებლად დაგვიკავშირდით.'
     rel=[x for x in P if x['cat']==p['cat'] and x is not p]
     i=P.index(p); rel=(rel[rel.index(next((x for x in rel if P.index(x)>i),rel[0] if rel else None)):]+rel)[:4] if rel else []
     cr=[('მთავარი','/'),('პროდუქცია','/products/'),(cd['title'],f'/products/{p["cat"]}/'),(p['name'],p['url'])]
     meta=(f'მოდელი: {E(p["code"])} · ' if p['code'] else '')+f'კატეგორია: <a href="/products/{p["cat"]}/">{E(cd["title"])}</a> · მასალა: EPS'
-    body=crumbs_html(cr)+f'''<section><div class="wrap"><article class="prod reveal"><div class="pimg">{img(p["imgurl"],p["wh"],p["name"]+" – EPS დეკორატიული ელემენტი ფასადისთვის",False)}</div><div><p class="eyebrow" data-i18n="prod.eyebrow">პროდუქტი</p><h1>{E(p["name"])}</h1><p class="meta">{meta}</p><p>{E(d1)}</p><h2 data-i18n="prod.sizes">ზომები</h2><div class="tw"><table><thead><tr><th data-i18n="prod.model">მოდელი</th><th data-i18n="prod.size">ზომა</th></tr></thead><tbody>{rows}</tbody></table></div><p class="note">{E(szs)} სხვა ზომის საჭიროების შემთხვევაში დაგვიკავშირდით.</p>{CTA()}</div></article>
+    body=crumbs_html(cr)+f'''<section><div class="wrap"><article class="prod reveal"><div class="pimg">{img(p["imgurl"],p["wh"],p["name"]+" – "+cd["title"],False)}</div><div><p class="eyebrow" data-i18n="prod.eyebrow">პროდუქტი</p><h1>{E(p["name"])}</h1><p class="meta">{meta}</p><p>{E(d1)}</p><h2 data-i18n="prod.sizes">ზომები</h2><div class="tw"><table><thead><tr><th data-i18n="prod.model">მოდელი</th><th data-i18n="prod.size">ზომა</th></tr></thead><tbody>{rows}</tbody></table></div><p class="note">{E(szs)} სხვა ზომის საჭიროების შემთხვევაში დაგვიკავშირდით.</p>{CTA()}</div></article>
 <h2 class="reveal" data-i18n="prod.desc">აღწერა და გამოყენება</h2><p class="lead reveal">{E(d2)}</p>
 <h2 class="sub reveal" data-i18n="prod.related">მსგავსი პროდუქტები</h2><div class="grid">{"".join(card(x) for x in rel)}</div></div></section>'''
     props=[{"@type":"PropertyValue","name":"ზომა ("+m+")","value":s} for m,s in sz]
     prod={"@type":"Product","name":p['name'],"description":d1+' '+szs,"image":BASE+p['imgurl'],"url":BASE+p['url'],"category":cd['title'],"material":"გაფართოებული პოლისტირონი (EPS)","additionalProperty":props,"manufacturer":{"@id":BASE+"/#org"}}
     if p['code']: prod['sku']=p['code']
     if ok(NAME): prod['brand']={"@type":"Brand","name":NAME}
-    page(p['url'],f'{p["name"]} – EPS {cd["single"]}{", "+sz[0][1] if not multi and "დაზუსტდება" not in sz[0][1] and "მზადდება" not in sz[0][1] else ""} | {NAME}',(f'{p["name"]}: EPS ფასადის დეკორი. {szs} შეკვეთა და მიწოდება საქართველოში.')[:300],body,[crumbs_ld(cr),prod],og=BASE+p['imgurl'])
+    page(p['url'],f'{p["name"]} – {cd["title"]} | {NAME}',(f'{p["name"]}: {cd["title"]}. {szs} შეკვეთა და მიწოდება საქართველოში.')[:300],body,[crumbs_ld(cr),prod],og=BASE+p['imgurl'])
 
 # ---------- blog
 bl=''.join(f'<li class="reveal"><a href="/blog/{s}/"><b>{E(t)}</b></a><p>{E(d)}</p></li>' for s,t,d,_ in BLOG)
@@ -237,7 +237,7 @@ page('/404.html','გვერდი ვერ მოიძებნა | '+NAME
 urls=''.join(f'<url><loc>{BASE}{u}</loc><lastmod>{TODAY}</lastmod></url>' for u in PAGES)
 open(OUT+'/sitemap.xml','w',encoding='utf-8').write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
 open(OUT+'/robots.txt','w',encoding='utf-8').write(f'User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n')
-ll=[f'# {NAME}','',f'> EPS (გაფართოებული პოლისტირონის) დეკორატიული ფასადის ელემენტების მწარმოებელი საქართველოში: კარნიზები, სვეტები, კუთხის ქვები, ფასადის პანელები, თაღები.','','## კატალოგი']
+ll=[f'# {NAME}','',f'> EPS (გაფართოებული პოლისტირონის) დეკორატიული ფასადის ელემენტების მწარმოებელი საქართველოში: კარნიზები, სვეტები, კუთხის ქვები, ფასადის პანელები, კრონშტეინები.','','## კატალოგი']
 ll+=[f'- [{CAT[c]["title"]}]({BASE}/products/{c}/): {CAT[c]["intro"]}' for c in CAT]
 ll+=['','## ბლოგი']+[f'- [{t}]({BASE}/blog/{s}/): {d}' for s,t,d,_ in BLOG]+['','## კონტაქტი',f'- [კონტაქტი]({BASE}/contact/)']
 open(OUT+'/llms.txt','w',encoding='utf-8').write('\n'.join(ll)+'\n')
