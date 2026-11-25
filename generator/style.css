@@ -1426,3 +1426,6 @@ body::before{
 /* Soft header brand on scrolled state */
 .site-header.is-scrolled .brand,
 body:not(.is-home) .site-header .brand{letter-spacing:-.015em}
+
+/* product photos: white background filling the whole image box */
+.card .ph, .pimg { background: #fff; }
